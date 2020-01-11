@@ -93,6 +93,8 @@ INSTALL_KUBECTL_BOOLEAN=$6
 
     # See: https://github.com/mrvautin/expressCart
 
+    # Also for MongoDB assistance, see: https://ianlondon.github.io/blog/mongodb-auth/
+
 
     if [ "$INSTALL_KUBECTL_BOOLEAN" = false ]; then
         echo "No need to install kubectl. Finishing bootstrap successfully!!!"
