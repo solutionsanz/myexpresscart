@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        {{#if config.injectJs}}{{{config.injectJs}}}{{/if}}
+		<title>{{config.cartTitle}} - {{title}}</title>
+	    <meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        {{#if admin}}
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <!--[if IE]><link rel="SHORTCUT ICON" href="/images/favicon.png"/><![endif]-->
+        {{else}}
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <!--[if IE]><link rel="SHORTCUT ICON" href="/favicon.ico"/><![endif]-->
+        {{/if}}
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        {{#if metaDescription}}
+        <meta name="description" content="{{metaDescription}}">
+        {{else}}
+		<meta name="description" content="{{config.cartDescription}}">
+        {{/if}}
+		<meta name="keywords" content="{{config.cartTitle}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="/stylesheets/pushy{{config.env}}.css">
+        {{#if admin}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.css" />
+        {{/if}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css" integrity="sha256-4qBzeX420hElp9/FzsuqUNqVobcClz1BjnXoxUDSYQ0=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="/stylesheets/codemirror-style.min.css">
+        <link rel="stylesheet" href="/stylesheets/style{{config.env}}.css">
+        {{#if admin}}
+        <link rel="stylesheet" href="/stylesheets/admin{{config.env}}.css">
+        {{/if}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" integrity="sha256-x3YZWtRjM8bJqf48dFAv/qmgL68SI4jqNWeSLMZaMGA=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+        {{#if admin}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.js" integrity="sha256-K1exjHe1X4MP24jRizgBaSbUDUrNhFDRSwGoEYGmtJE=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/css/css.min.js" integrity="sha256-D5oJ11cOmRhXSYWELwG2U/XYH3YveZJr9taRYLZ2DSM=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/xml/xml.min.js" integrity="sha256-ERFGS58tayDq5kkyNwd/89iZZ+HglMH7eYXxG1hxTvA=" crossorigin="anonymous"></script>
+        {{/if}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js" integrity="sha256-LlHVI5rUauudM5ZcZaD6hHPHKrA7CSefHHnKgq+/AZc=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js" integrity="sha256-4lietOiwRDBKx1goZZbRiwB06L+/bPYEGDIKZt82bgg=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+        <script src="/javascripts/jquery.bootpag.min.js"></script>
+        <script src="/javascripts/cssbeautify.min.js"></script>
+        <script src="/javascripts/common{{config.env}}.js"></script>
+		<script src="/javascripts/expressCart{{config.env}}.js"></script>
+        {{#if admin}}
+        <script src="/javascripts/admin{{config.env}}.js"></script>
+        {{/if}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.min.js" integrity="sha256-jdwX0QzXB7z7Xc7Vz0ovtIHWO5qIZWg0aLcGv44JDgE=" crossorigin="anonymous"></script>
+        <!-- SEO data -->
+        <link rel="canonical" href="{{config.baseUrl}}" />
+        <meta name="referrer" content="origin" />
+        <meta property="og:site_name" content="{{config.cartTitle}}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="{{title}}" />
+        <meta property="og:url" content="{{config.baseUrl}}" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="{{title}}" />
+        <meta name="twitter:url" content="{{config.baseUrl}}" />
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "WebSite",
+                "publisher": "{{config.cartTitle}}",
+                "url": "{{config.baseUrl}}"
+            }
+        </script>
+        <!-- SEO data -->
+        {{#if config.googleAnalytics}}{{{config.googleAnalytics}}}{{/if}}
+        {{#if config.customCss}}<style>{{{config.customCss}}}</style>{{/if}}
+        {{#if admin}}
+        <link rel="stylesheet" href="/stylesheets/admin{{config.env}}.css">
+        {{else}}
+        {{#if config.theme}}
+        <link rel="stylesheet" href="/{{config.theme}}/style{{config.env}}.css">
+        <script src="/{{config.theme}}/index{{config.env}}.js"></script>
+        {{/if}}
+        {{/if}}
+	</head>
+    {{#if admin}}
+	<body class="admin">
+    {{else}}
+    <body>
+    {{/if}}
+        <nav class="navbar navbar-expand-lg justify-content-between mainNavBar">
+            {{#if admin}}
+            <a class="navbar-brand" href="/admin"><img class="img-fluid" src="/images/logo-admin.png"></a>
+            {{else}}
+            <a class="navbar-brand" href="/">{{@root.config.cartTitle}}</a>
+            {{/if}}
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <div id="navbarText">
+                <ul class="navbar-nav ml-auto">
+                    {{#unless admin}}
+                    {{#ifCond @root.config.enableLanguages "!=" false}}
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ @root.__ "Languages" }}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            {{#availableLanguages}}
+                                <li><a class="dropdown-item" href="/lang/{{this}}">{{@root.__ this}}</a></li>
+                            {{/availableLanguages}}
+                        </div>
+                    </div>
+                    {{/ifCond}}
+                    {{/unless}}
+                    {{#unless admin}}
+                        {{#if @root.session.cart}}
+                            <li class="nav-item"><a href="/checkout/cart" class="btn menu-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{ @root.__ "Cart" }} <span class="badge badge-danger" id="cart-count">{{@root.session.totalCartItems}}</span></a></li>
+                            {{else}}
+                            <li class="nav-item"><a href="/checkout/cart" class="btn menu-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{ @root.__ "Cart" }} <span class="badge badge-danger" id="cart-count">0</span></a></li>
+                        {{/if}}
+                    {{/unless}}
+                    {{#if admin}}
+                    {{#if @root.session.user}}
+                        <li class="nav-item"><a href="#" data-toggle="modal" data-target="#globalSearchModal" class="pad-right-15"><i class="fas fa-search"></i></a></li>
+                        <li class="nav-item"><a href="/admin/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    {{/if}}
+                    {{/if}}
+                </ul>
+            </div>
+        </nav>
+        <div class="site-overlay"></div>
+        {{#unless admin}}
+            {{#ifCond page '!=' 'checkout'}}
+            {{#ifCond page '!=' 'pay'}}
+                <div id="cart" class="col-md-12 pad-left-12 top-pad-10 pushy pushy-right">
+                    <div class="row {{checkout}}">
+                        <div class="col-sm-12 text-right">
+                            <button class="pushy-link btn btn-outline-primary" type="button">X</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="cart" class="col-md-12">
+                        {{> (getTheme 'cart')}}
+                        <div class="row">
+                        <div class="col-sm-12 {{showCartButtons @root.session.cart}} cart-buttons">
+                            <button class="btn btn-outline-danger float-left" id="empty-cart" type="button">{{ @root.__ "Empty cart" }}</button>
+                            <a href="/checkout/information" class="btn btn-outline-primary float-right">Checkout</a>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            {{/ifCond}}
+            {{/ifCond}}
+        {{/unless}}
+		<div class="container-fluid content-body" id="container">
+            <div class="row">
+                {{#if admin}}
+                    {{{body}}}
+                {{else}}
+                {{{body}}}
+                {{/if}}
+            </div>
+		</div>
+		<input type="hidden" id="input_notify_message" value="{{message}}">
+		<input type="hidden" id="input_notify_messageType" value="{{messageType}}">
+        <input type="hidden" id="cartCheckout" value="{{checkout}}">
+        <input type="hidden" id="cartTheme" value="{{@root.config.theme}}">
+        <input type="hidden" id="currencySymbol" value="{{@root.config.currencySymbol}}">
+        {{#if @root.config.maxQuantity}} <input type="hidden" id="maxQuantity" value="{{@root.config.maxQuantity}}">{{/if}}
+		<div id="notify_message"></div>
+		{{#if showFooter}}
+            <div class="footer">
+                <div class="d-flex h-100">
+                    <div class="col-12 align-self-center">
+                    {{#isNull @root.config.footerHtml}}
+                        <h5 class="text-center">Powered by expressCart</h5>
+                    {{else}}
+                        {{{@root.config.footerHtml}}}
+                    {{/isNull}}
+                    </div>
+                </div>
+            </div>
+		{{/if}}
+        <script src="/javascripts/pushy.min.js"></script>
+        {{#if admin}}
+        <div class="modal fade" id="globalSearchModal" tabindex="-1" role="dialog" aria-labelledby="globalSearchModal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content global-search-modal-content">
+                    <div class="modal-header global-search-modal-header"></div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group global-search-form">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text search-input-addon" for="global-search-value"><i class="fas fa-search"></i></label>
+                                    </div>
+                                    <input type="text" class="form-control form-control-lg" id="global-search-value">
+                                </div>
+                            </div>
+                        </form>
+                        <ul class="list-group col-12 invisible" id="global-search-results"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+	</body>
+</html>
