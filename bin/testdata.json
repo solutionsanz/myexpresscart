@@ -1,6 +1,37 @@
 {
     "products": [
         {
+            "productPermalink": "anniversary-tshirt",
+            "productTitle": "MuleQuest 100 year Anniversary T-shirt",
+            "productPrice": "1.00",
+            "productDescription": "<p style=\"margin-bottom: 25px; text-rendering: optimizeLegibility;\">Thank you for your 100 years of loyalty. We, at MuleQuest, are committed to keep exceeding your expectations. Now, we are fully digitising our business to be closer to you. This means better products, better services and lower prices for you. Let us celebrate with a limited edition T-Shirt, designed just for you.<\/p><ul class=\"tabs-content\" style=\"margin-right: 0px; margin-bottom: 25px; margin-left: 20px; padding: 0px; text-rendering: optimizeLegibility;\"><li style=\"margin-bottom: 0px;\">100% Organic Cotton.<\/li><\/ul>",
+            "productPublished": true,
+            "productTags": "organic, tshirts",
+            "productOptions": {
+                "Size": {
+                    "optName": "Size",
+                    "optLabel": "Select size",
+                    "optType": "select",
+                    "optOptions": [
+                        "S",
+                        "M",
+                        "L",
+                        "XL"
+                    ]
+                },
+                "Colour": {
+                    "optName": "Colour",
+                    "optLabel": "Select colour",
+                    "optType": "select",
+                    "optOptions": [
+                        "White",
+                        "Navy",
+                        "Charcoal"
+                    ]
+                }
+            },
+            "productStock": 1000
+        },{
             "productPermalink": "duckworth-jacket",
             "productTitle": "Duckworth Woolfill Jacket",
             "productPrice": "188.00",
