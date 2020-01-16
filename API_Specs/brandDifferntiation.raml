@@ -1,0 +1,38 @@
+#%RAML 1.0
+types:
+  FeedDataType:
+    description: A new Feed to be posted into Social Media
+    example:
+      strict: true
+      value:
+        title: 100 Years Anniversary Campaign
+        message: Obtain your 100 years Anniversary T-Shirt. Thanks for your loyalty!
+    properties:
+      title?:
+        example: Example
+        type: string
+      message?:
+        example: Example
+        type: string
+title: Brand Differentiation API
+description: Process API designed to facilitate Marketing campaigns, social media penetration and customer sentiment analysis
+mediaType:
+  - application/json
+protocols:
+  - HTTP
+  - HTTPS
+/feed:
+  post:
+    displayName: Marketing penetration Feed on Social Media
+    description: This endpoint is used to post Messages on Facebook and Twitter about campaign and other marketing penetration campaigns.
+    body:
+      type: FeedDataType
+    responses:
+      "200":
+        description: Message to be posted into Social Media.
+        body:
+          type: FeedDataType
+
+
+
+

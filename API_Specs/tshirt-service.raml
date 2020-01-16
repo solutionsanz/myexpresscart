@@ -1,0 +1,157 @@
+#%RAML 1.0
+types:
+  InventoryItemDataType:
+    description: Inventory Item Data Type
+    example:
+      strict: true
+      value:
+        productCode: 100YANIVTSHIRT
+        size: Large
+        description: MuleQuest 100 years Anniversary T-shirt
+        count: "1000"
+    properties:
+      productCode?:
+        example: Example
+        type: string
+      size?:
+        example: Example
+        type: string
+      description?:
+        example: Example
+        type: string
+      count?:
+        example: Example
+        type: string
+  TrackOrderRequestNewDataType:
+    description: Track Orders by email and orderId
+    example:
+      strict: true
+      value:
+        email: carlos@email.com
+        orderId: 100YANNIVTSHIRT
+    properties:
+      email?:
+        example: Example
+        type: string
+      orderId?:
+        example: Example
+        type: string
+  TrackOrderResponseNewDataType:
+    description: Track Orders Response
+    example:
+      strict: true
+      value:
+        orderId: ABC123
+        status: Shipped
+        size: Large
+    properties:
+      orderId?:
+        example: Example
+        type: string
+      status?:
+        example: Example
+        type: string
+      size?:
+        example: Example
+        type: string
+  OrderTshirtRequestDataType:
+    description: Order T-shirt Request
+    example:
+      strict: true
+      value:
+        size: Large
+        email: carlos@test.com
+        name: Testy McTesterson
+        address1: 2 test street
+        address2: Testvile
+        city: Melbourne
+        stateOrProvince: Victoria
+        postalCode: "3000"
+        country: Australia
+    properties:
+      size?:
+        example: Example
+        type: string
+      email?:
+        example: Example
+        type: string
+      name?:
+        example: Example
+        type: string
+      address1?:
+        example: Example
+        type: string
+      address2?:
+        example: Example
+        type: string
+      city?:
+        example: Example
+        type: string
+      stateOrProvince?:
+        example: Example
+        type: string
+      postalCode?:
+        example: Example
+        type: string
+      country?:
+        example: Example
+        type: string
+  OrderTshirtResponseDataType:
+    description: Order Tshirt Response
+    example:
+      strict: true
+      value:
+        orderId: ABC123
+    properties:
+      orderId?:
+        example: Example
+        type: string
+description: This is a Legacy Application that contains information about the tshirts in the store
+mediaType:
+  - application/json
+version: 1.0.0.3
+protocols:
+  - HTTP
+  - HTTPS
+/tshirt/inventory:
+  get:
+    displayName: Get T-Shirt Inventory
+    description: This API will get the information about T-Shirt Inventory in JSON format
+    responses:
+      "200":
+        description: List of Inventory for T-Shirts
+        body:
+          application/json:
+            description: Array of Inventory Items
+            items:
+              type: InventoryItemDataType
+/tshirt/orders:
+  post:
+    displayName: Create or Modify Orders
+    description: This endpoint creates or modifies existing orders if the orderId is provided.
+    responses:
+      "200":
+        description: Returns the orderId of the just created or updated order
+        body:
+          description: Returns the OrderId
+          type: OrderTshirtResponseDataType
+  get:
+    displayName: Get Orders
+    description: Get all orders or filter by orderId and username query parameters
+    queryParameters:
+      orderId?:
+        example: Example
+        type: string
+      email?:
+        example: Example
+        type: string
+    responses:
+      "200":
+        description: Track all orders or filter by OrderId and Username
+        body:
+          type: TrackOrderResponseNewDataType
+title: TshirtService API
+
+
+
+

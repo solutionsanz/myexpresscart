@@ -1,0 +1,274 @@
+#%RAML 1.0
+types:
+  CustomerNotificationDataType:
+    description: This is a message to be sent to the customer via SMS as a mechanism to keep them informed as their purchase items arrive safe and sound.
+    example:
+      strict: true
+      value:
+        title: Order delivered
+        message: Hi Carlos, your order 100YANNIVTSHIRT0001 has been delivered to your postal address. Thanks for your loyalty!
+    properties:
+      title?:
+        example: Example
+        type: string
+      message?:
+        example: Example
+        type: string
+  InventoryItemDataType:
+    description: Inventory Item Data Type
+    example:
+      strict: true
+      value:
+        productCode: ABC123
+        name: MuleQuest 100 years Anniversary T-shirt
+        description: Thank you for your 100 years of loyalty. We, at MuleQuest, are committed to keep exceeding your expectations. Now, we are fully digitising our business to be closer to you. This means better products, better services and lower prices for you. Let us celebrate with a limited edition T-Shirt, designed just for you.
+        sizes: XL, L, M, S, XS
+        cost: "1"
+        colours: White, Navy, Charcoal
+        count: "1000"
+    properties:
+      productCode?:
+        example: Example
+        type: string
+      name?:
+        example: Example
+        type: string
+      description?:
+        example: Example
+        type: string
+      sizes?:
+        example: Example
+        type: string
+      cost?:
+        example: Example
+        type: string
+      colours?:
+        example: Example
+        type: string
+      count?:
+        example: Example
+        type: string
+  ContactDataType:
+    description: This is the Contact details of the person who will be added as a new Lead
+    example:
+      strict: true
+      value:
+        FirstName: Carlos
+        LastName: Rodriguez Iturria
+        Email: carlos@test.com
+        Mobile: "61449599665"
+        Company: Flinstones Inc
+    properties:
+      FirstName?:
+        example: Example
+        type: string
+      LastName?:
+        example: Example
+        type: string
+      Email?:
+        example: Example
+        type: string
+      Mobile?:
+        example: Example
+        type: string
+      Company?:
+        example: Example
+        type: string
+  OrderTshirtRequestDataType:
+    description: Order Request
+    example:
+      strict: true
+      value:
+        itemId: ABC123
+        size: Large
+        quantity: "1"
+        email: carlos@test.com
+        name: Carlos
+        address1: 2 test street
+        address2: testvile
+        city: Melbourne
+        stateOrProvince: Victoria
+        postalCode: "3000"
+        country: Australia
+    properties:
+      itemId?:
+        example: Example
+        type: string
+      size?:
+        example: Example
+        type: string
+      quantity?:
+        example: Example
+        type: string
+      email?:
+        example: Example
+        type: string
+      name?:
+        example: Example
+        type: string
+      address1?:
+        example: Example
+        type: string
+      address2?:
+        example: Example
+        type: string
+      city?:
+        example: Example
+        type: string
+      stateOrProvince?:
+        example: Example
+        type: string
+      postalCode?:
+        example: Example
+        type: string
+      country?:
+        example: Example
+        type: string
+  TrackOrderResponseDataType:
+    description: Track Orders Response
+    example:
+      strict: true
+      value:
+        orderId: 100YANNIVTSHIRT0001
+        status: Shipped
+        size: Large
+    properties:
+      orderId?:
+        example: Example
+        type: string
+      status?:
+        example: Example
+        type: string
+      size?:
+        example: Example
+        type: string
+  SocialMediaFeedDataType:
+    description: A new Feed to be posted into Social Media
+    example:
+      strict: true
+      value:
+        title: MuleQuest 100 Years Anniversary
+        message: Obtain your 100 years Anniversary T-Shirt. Thanks for your loyalty!
+    properties:
+      title?:
+        example: Example
+        type: string
+      message?:
+        example: Example
+        type: string
+  OrderTshirtResponseDataType:
+    description: Order Item Response
+    example:
+      strict: true
+      value:
+        orderId: 100YANNIVTSHIRT0001
+    properties:
+      orderId?:
+        example: Example
+        type: string
+  TrackOrderRequestDataType:
+    description: Track Orders by email and orderId
+    example:
+      strict: true
+      value:
+        email: carlos@email.com
+        orderId: 100YANNIVTSHIRT0001
+    properties:
+      email?:
+        example: Example
+        type: string
+      orderId?:
+        example: Example
+        type: string
+title: Experience API for 100 Years of Loyalty Campaign
+description: This Experience API Specification is focused to facilitate the creation of a new Mobile Application that will allow customers to enquiry their 100 Years Anniversary T-Shirt.
+mediaType:
+  - application/json
+version: 1.0.0.5
+protocols:
+  - HTTP
+  - HTTPS
+/facebook:
+  post:
+    displayName: Facebook message post
+    description: Facebook message post used for marketing campaigns...
+    body:
+      type: SocialMediaFeedDataType
+    responses:
+      "200":
+        description: Facebook post message
+        body:
+          type: SocialMediaFeedDataType
+/inventory:
+  get:
+    displayName: Get product items Inventory
+    description: This API will get the information about T-Shirt Inventory in JSON format
+    responses:
+      "200":
+        description: Array of Inventory Items
+        body:
+          items:
+            type: InventoryItemDataType
+/leads:
+  post:
+    displayName: Salesforce Lead generation
+    description: This endpoint will generate a Lead entry into Slaesforce
+    body:
+      type: ContactDataType
+    responses:
+      "200":
+        description: Returns the same contact information as entered
+        body:
+          type: ContactDataType
+/orders:
+  get:
+    displayName: Get Orders
+    description: Get all orders or filter by orderId and username query parameters
+    queryParameters:
+      orderId?:
+        example: Example
+        type: string
+      email?:
+        example: Example
+        type: string
+    responses:
+      "200":
+        description: Track all orders or filter by OrderId and Username
+        body:
+          type: TrackOrderResponseDataType
+  post:
+    displayName: Create or Modify Orders
+    description: This endpoint creates or modifies existing orders if the orderId is provided.
+    body:
+      type: OrderTshirtRequestDataType
+    responses:
+      "200":
+        description: Returns the orderId of the just created or updated order
+        body:
+          type: OrderTshirtResponseDataType
+/tweet:
+  post:
+    displayName: A simple Tweet
+    description: A Tweet goes into Twitter used for social campaigns
+    body:
+      type: SocialMediaFeedDataType
+    responses:
+      "200":
+        description: A Tweet
+        body:
+          type: SocialMediaFeedDataType
+/notifications/sms:
+  post:
+    displayName: SMS notification
+    description: SMS Notification
+    body:
+      type: CustomerNotificationDataType
+    responses:
+      "200":
+        description: SMS Notificaton
+        body:
+          type: CustomerNotificationDataType
+
+
+
+

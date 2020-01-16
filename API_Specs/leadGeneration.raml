@@ -1,0 +1,47 @@
+#%RAML 1.0
+types:
+  ContactDataType:
+    description: This is the Cntact details of the person who will be added like new Leads in Salesforce
+    example:
+      strict: true
+      value:
+        FirstName: Carlos
+        LastName: Rodriguez Iturria
+        Email: carlos@test.com
+        Mobile: "61449588440"
+        Company: MuleQuest
+    properties:
+      FirstName?:
+        example: Example
+        type: string
+      LastName?:
+        example: Example
+        type: string
+      Email?:
+        example: Example
+        type: string
+      Mobile?:
+        example: Example
+        type: string
+      Company?:
+        example: Example
+        type: string
+title: Salesforce Leads
+description: This service is used to create and query Leads from Salesforce
+mediaType:
+  - application/json
+version: 1.0.0.2
+protocols:
+  - HTTP
+  - HTTPS
+/sf/leads:
+  post:
+    displayName: Salesforce Lead generation
+    description: This endpoint will generate a Lead entry into Slaesforce
+    body:
+      type: ContactDataType
+    responses:
+      "200":
+        description: Returns the same contact information as entered
+        body:
+          type: ContactDataType

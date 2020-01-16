@@ -2,7 +2,7 @@
     "products": [
         {
             "productPermalink": "anniversary-tshirt",
-            "productTitle": "MuleQuest 100 year Anniversary T-shirt",
+            "productTitle": "MuleQuest 100 years Anniversary T-shirt",
             "productPrice": "1.00",
             "productDescription": "<p style=\"margin-bottom: 25px; text-rendering: optimizeLegibility;\">Thank you for your 100 years of loyalty. We, at MuleQuest, are committed to keep exceeding your expectations. Now, we are fully digitising our business to be closer to you. This means better products, better services and lower prices for you. Let us celebrate with a limited edition T-Shirt, designed just for you.<\/p><ul class=\"tabs-content\" style=\"margin-right: 0px; margin-bottom: 25px; margin-left: 20px; padding: 0px; text-rendering: optimizeLegibility;\"><li style=\"margin-bottom: 0px;\">100% Organic Cotton.<\/li><\/ul>",
             "productPublished": true,
@@ -30,7 +30,8 @@
                     ]
                 }
             },
-            "productStock": 1000
+            "productStock": 1000,
+            "productImage" : "/uploads/5e19b91787af6808f99aabf6/mule_shirt_dark.PNG"
         },{
             "productPermalink": "duckworth-jacket",
             "productTitle": "Duckworth Woolfill Jacket",
@@ -60,7 +61,9 @@
                     ]
                 }
             },
-            "productStock": 10
+            "productStock": 10,
+            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbf5/woolfill-jacket_grande.jpg",
+            "productComment" : false
         },
         {
             "productPermalink": "5-panel-camp-cap",
@@ -82,7 +85,9 @@
                     ]
                 }
             },
-            "productStock": 10
+            "productStock": 10,
+            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbf6/5-panel-hat_grande.jpg",
+            "productComment" : false
         },
         {
             "productPermalink": "ranger-boot",
@@ -108,7 +113,9 @@
                     ]
                 }
             },
-            "productStock": 10
+            "productStock": 10,
+            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbf7/boot_grande.jpg",
+            "productComment" : false
         },
         {
             "productPermalink": "whitney-pullover",
@@ -130,7 +137,9 @@
                     ]
                 }
             },
-            "productStock": 10
+            "productStock": 10,
+            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbf8/WhitneyPullover_Full_grande.jpeg",
+            "productComment" : false
         },
         {
             "productPermalink": "scout-backpack",
@@ -152,7 +161,9 @@
                     ]
                 }
             },
-            "productStock": 100
+            "productStock": 100,
+            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbf9/hudderton-backpack.jpg",
+            "productComment" : false
         },
         {
             "productPermalink": "hudderton-backpack",
@@ -162,7 +173,9 @@
             "productPublished": true,
             "productTags": "backpack",
             "productOptions": "",
-            "productStock": 10
+            "productStock": 10,
+            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbfa/scout-backpack_grande.jpg",
+            "productComment" : false
         },
         {
             "productPermalink": "ayres-chambray",
@@ -183,7 +196,9 @@
                     ]
                 }
             },
-            "productStock": 10
+            "productStock": 10,
+            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbfb/chambray.jpg",
+            "productComment" : false
         },
         {
             "productPermalink": "gym-membership",
@@ -194,32 +209,34 @@
             "productTags": "subscription",
             "productOptions": "",
             "productStock": null,
-            "productSubscription": "plan_XXXXXXXXXXXXXX"
+            "productSubscription": "plan_XXXXXXXXXXXXXX",
+            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbfc/gym.png",
+            "productComment" : false
         }
     ],
     "customers": [
         {
-            "email": "test@test.com",
-            "firstName": "Testy",
-            "lastName": "Cles",
+            "email": "paul@mulesoft.com",
+            "firstName": "Paul",
+            "lastName": "Bradley",
             "address1": "1 test street",
             "address2": "testvile",
-            "country": "Netherlands",
-            "state": "NL",
-            "postcode": "2000TW",
-            "phone": "123456789",
+            "country": "Australia",
+            "state": "Sydney",
+            "postcode": "2000",
+            "phone": "61449588440",
             "password": "$2a$10$kKjnX1J/CAdgdmLI0WuPY.ILH1c7N8mD0H/ZyUXEfee1mJxJvZIS."
         },
         {
-            "email": "test1@test.com",
+            "email": "carlos@test.com",
             "firstName": "Testy",
             "lastName": "McTesterson",
             "address1": "2 test street",
             "address2": "testvile",
-            "country": "Netherlands",
-            "state": "",
-            "postcode": "2000ZT",
-            "phone": "123456789",
+            "country": "Australia",
+            "state": "Victoria",
+            "postcode": "3000",
+            "phone": "61449588440",
             "password": "$2a$10$kKjnX1J/CAdgdmLI0WuPY.ILH1c7N8mD0H/ZyUXEfee1mJxJvZIS."
         }
     ],
@@ -240,7 +257,7 @@
         },
         {
             "usersName": "Carlos",
-            "userEmail": "carlos@email.com",
+            "userEmail": "admin@test.com",
             "userPassword": "$2a$10$7jQx/hQOWrRni531b/dHRuH8o1ZP8Yo8g..GpTOF4M7RrEH/pzTMy",
             "isAdmin": true,
             "isOwner": true
