@@ -30,8 +30,7 @@
                     ]
                 }
             },
-            "productStock": 1000,
-            "productImage" : "/uploads/5e19b91787af6808f99aabf6/mule_shirt_dark.PNG"
+            "productStock": 1000
         },{
             "productPermalink": "duckworth-jacket",
             "productTitle": "Duckworth Woolfill Jacket",
@@ -61,9 +60,7 @@
                     ]
                 }
             },
-            "productStock": 10,
-            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbf5/woolfill-jacket_grande.jpg",
-            "productComment" : false
+            "productStock": 10
         },
         {
             "productPermalink": "5-panel-camp-cap",
@@ -85,9 +82,7 @@
                     ]
                 }
             },
-            "productStock": 10,
-            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbf6/5-panel-hat_grande.jpg",
-            "productComment" : false
+            "productStock": 10
         },
         {
             "productPermalink": "ranger-boot",
@@ -113,9 +108,7 @@
                     ]
                 }
             },
-            "productStock": 10,
-            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbf7/boot_grande.jpg",
-            "productComment" : false
+            "productStock": 10
         },
         {
             "productPermalink": "whitney-pullover",
@@ -137,9 +130,7 @@
                     ]
                 }
             },
-            "productStock": 10,
-            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbf8/WhitneyPullover_Full_grande.jpeg",
-            "productComment" : false
+            "productStock": 10
         },
         {
             "productPermalink": "scout-backpack",
@@ -161,9 +152,7 @@
                     ]
                 }
             },
-            "productStock": 100,
-            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbf9/hudderton-backpack.jpg",
-            "productComment" : false
+            "productStock": 100
         },
         {
             "productPermalink": "hudderton-backpack",
@@ -173,9 +162,7 @@
             "productPublished": true,
             "productTags": "backpack",
             "productOptions": "",
-            "productStock": 10,
-            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbfa/scout-backpack_grande.jpg",
-            "productComment" : false
+            "productStock": 10
         },
         {
             "productPermalink": "ayres-chambray",
@@ -196,9 +183,7 @@
                     ]
                 }
             },
-            "productStock": 10,
-            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbfb/chambray.jpg",
-            "productComment" : false
+            "productStock": 10
         },
         {
             "productPermalink": "gym-membership",
@@ -209,9 +194,7 @@
             "productTags": "subscription",
             "productOptions": "",
             "productStock": null,
-            "productSubscription": "plan_XXXXXXXXXXXXXX",
-            "productImage" : "/uploads/5e1822e3e2bfa159ebfbbbfc/gym.png",
-            "productComment" : false
+            "productSubscription": "plan_XXXXXXXXXXXXXX"
         }
     ],
     "customers": [
