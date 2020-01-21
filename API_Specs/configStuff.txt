@@ -1,0 +1,22 @@
+-----
+cri-tshirtservice api: API ID: 15965273
+cri-sfleads api:  API ID: 15965239
+twfeeds api: API ID: 15965240
+NotificationService API: API ID: 15965242
+------
+Order Management API: API ID: 15965243
+Lead Generation API: API ID: 15965245
+Brand Differentiation API: API ID: 15965247
+Customer Engagement: API ID: 15965249
+------
+100 Years of Loyalty API: API ID: 15965250
+
+-------
+
+Sandobox Client ID: c7130507a58a485f8ad6f96faba34dce
+
+Client Secret: 36d32F41eb1D4DcC9a56a4AE9CC757Db
+
+
+anypoint.platform.client_id
+anypoint.platform.client_secret
